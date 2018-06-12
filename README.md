@@ -13,3 +13,21 @@
 
 - belongs_to :user
 - belongs_to :group
+
+---
+
+## Users table
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, index: true|
+|email|srting|null: false|
+|password|text|null: false|
+
+### Association
+
+- has_many :messages
+- has_many :groups, through: :members
+- has_many :members
+
+---
