@@ -1,6 +1,6 @@
 # Database blueprint for ChatSpace
 
-## Messages table
+## messages table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -16,7 +16,7 @@
 
 ---
 
-## Users table
+## users table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -32,7 +32,7 @@
 
 ---
 
-## Members table
+## users_groups table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -46,7 +46,7 @@
 
 ---
 
-## Groups table
+## groups table
 
 |Column|Type|Options|
 |------|----|-------|
