@@ -48,8 +48,8 @@
             / = image_tag 'unknown'
   .chat-main__footer
     %form.chat-main__footer-form#new_message{:action => "/groups/1050/messages", :method => "post"}
-      %input{name: "utf8", type: "hidden", value: "✓"}
-      %input{type: "hidden", name: "authenticity_token", value: "q/gRvch4PommAwRD3t/KIHUIbvlIaWL1fB7OtHjONRLQicQq+8TRpEBoxp+yrmXRVpkB2bCiCqhiHuVgIx+ypw=="}
+      / %input{name: "utf8", type: "hidden", value: "✓"}
+      / %input{type: "hidden", name: "authenticity_token", value: "q/gRvch4PommAwRD3t/KIHUIbvlIaWL1fB7OtHjONRLQicQq+8TRpEBoxp+yrmXRVpkB2bCiCqhiHuVgIx+ypw=="}
       .chat-main__footer-body
         %input.message#message_body{placeholder: "type a message", type: "text", name: "message[body]"}
         %label.chat-file{for: "message_image"}
