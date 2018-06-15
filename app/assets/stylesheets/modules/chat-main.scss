@@ -1,0 +1,25 @@
+.chat-main {
+  height: 100vh;
+  weight: calc(100vw - 300px);
+  float: left;
+  &__header {
+    height: $header-height;
+    border: 1px solid #eeeeee;
+    &--group {
+      margin: 0 40px;
+    }
+    &--group-name {
+      color: $group-name-color;
+      font-size: 20px;
+      margin: 35px 0 15px;
+    }
+    &--group-edit-btn {
+      color: $light-blue;
+      font-size: 15px;
+      line-height: 40px;
+      padding: 0 20px;
+      margin-top: 28px;
+      border: 1px solid $light-blue;
+    }
+  }
+}

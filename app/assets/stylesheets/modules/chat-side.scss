@@ -5,7 +5,7 @@
   color: $side-font-color;
   &__user {
     background-color: $darker-blue;
-    height: 15%;
+    height: $header-height;
     &--new-group {
       margin-left: 90px;
       display: inline-block;
@@ -20,7 +20,7 @@
     margin: auto 0;
   }
   &__user-name {
-    padding: 0 20px;
+    padding: 0 $side-margin;
     font-size: 16px;
     font-weight: bold;
   }
@@ -30,7 +30,7 @@
     background-color: $dark-blue;
   }
   &__group {
-    padding: 20px;
+    padding: $side-margin;
   }
   &__group-name {
     font-size: 15px;
