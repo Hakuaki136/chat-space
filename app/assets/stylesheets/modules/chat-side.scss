@@ -6,6 +6,13 @@
   &__user {
     background-color: $darker-blue;
     height: 15%;
+    &--new-group {
+      margin-left: 90px;
+      display: inline-block;
+    }
+    &--edit-user {
+      display: inline-block;
+    }
   }
   &__user-content {
     height: 50px;
@@ -13,7 +20,23 @@
     margin: auto 0;
   }
   &__user-name {
+    padding: 0 20px;
     font-size: 16px;
     font-weight: bold;
+  }
+
+  &__groups {
+    height: 85%;
+    background-color: $dark-blue;
+  }
+  &__group {
+    padding: 20px;
+  }
+  &__group-name {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+  &__group-message {
+    font-size: 11px;
   }
 }
