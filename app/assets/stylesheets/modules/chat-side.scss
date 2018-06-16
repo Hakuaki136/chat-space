@@ -3,22 +3,27 @@
   float: left;
   height: 100vh;
   width: 300px;
+
   &__user {
     background-color: $darker-blue;
     height: $header-height;
+
     &--new-group {
       display: inline-block;
       margin-left: 90px;
     }
+
     &--edit-user {
       display: inline-block;
     }
   }
+
   &__user-content {
     height: 50px;
     line-height: 50px;
     margin: auto 0;
   }
+
   &__user-name {
     font-size: 16px;
     font-weight: bold;
@@ -29,13 +34,16 @@
     background-color: $dark-blue;
     height: 85%;
   }
+
   &__group {
     padding: $side-margin;
   }
+
   &__group-name {
     font-size: 15px;
     margin-bottom: 5px;
   }
+
   &__group-message {
     font-size: 11px;
   }
