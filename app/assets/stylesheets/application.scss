@@ -1,5 +1,4 @@
 @import './reset';
-@import './config/colors';
-@import './config/length';
-@import './modules/chat-side';
-@import './modules/chat-main';
+@import './config/*';
+@import './modules/*';
+// @import 'clearfix';

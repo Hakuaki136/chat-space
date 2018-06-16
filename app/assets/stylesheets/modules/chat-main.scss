@@ -1,11 +1,12 @@
 .chat-main {
-  height: 100vh;
-  weight: calc(100vw - 300px);
   float: left;
+  height: 100vh;
+  width: calc(100vw - 300px);
   &__header {
+    border: 1px solid $header-border-color;
     height: $header-height;
-    border: 1px solid #eeeeee;
     &--group {
+      // @include clearfix();
       margin: 0 40px;
     }
     &--group-name {
@@ -14,12 +15,13 @@
       margin: 35px 0 15px;
     }
     &--group-edit-btn {
-      color: $light-blue;
-      font-size: 15px;
-      line-height: 40px;
-      padding: 0 20px;
-      margin-top: 28px;
+      --font-size: 15px;
       border: 1px solid $light-blue;
+      color: $light-blue;
+      float: right;
+      font-size: var(--font-size);
+      margin-top: 28px;
+      padding: calc(calc(40px - var(--font-size)) / 2) 20px;
     }
   }
 }
