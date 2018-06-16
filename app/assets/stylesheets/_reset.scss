@@ -19,6 +19,11 @@ html{
     TODO test putting a class on HEAD.
         - Fails on FF.
 */
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
 body,
 div,
 dl,
@@ -41,6 +46,7 @@ legend,
 input,
 textarea,
 p,
+a,
 blockquote,
 th,
 td {

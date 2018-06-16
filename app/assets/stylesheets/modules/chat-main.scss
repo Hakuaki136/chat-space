@@ -1,5 +1,3 @@
-@import '../mixin/clearfix';
-
 .chat-main {
   --side-width: 300px; // = $side-width
   float: left;
@@ -83,9 +81,12 @@
 
   &__footer-form {
     margin: 0 $main-margin;
+    position: relative;
   }
 
   &__footer-body {
+    position: relative;
+
     .message {
       border: 0;
       height: 50px;
@@ -97,7 +98,17 @@
     .chat-file {
       height: 50px;
       margin: 32px 130px 20px 0;
+      position: absolute;
+      right: 0;
+      top: 0;
       width: 40px;
+
+      .image {
+        display: none;
+        left: 15px;
+        position: absolute;
+        top: 15px;
+      }
     }
 
     .submit {
