@@ -6,7 +6,7 @@
     border: 1px solid $header-border-color;
     height: $header-height;
     &--group {
-      // @include clearfix();
+      @include clearfix();
       margin: 0 40px;
     }
     &--group-name {

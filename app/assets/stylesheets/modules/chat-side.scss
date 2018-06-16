@@ -1,14 +1,14 @@
 .chat-side {
+  color: $side-font-color;
+  float: left;
   height: 100vh;
   width: 300px;
-  float: left;
-  color: $side-font-color;
   &__user {
     background-color: $darker-blue;
     height: $header-height;
     &--new-group {
-      margin-left: 90px;
       display: inline-block;
+      margin-left: 90px;
     }
     &--edit-user {
       display: inline-block;
@@ -20,14 +20,14 @@
     margin: auto 0;
   }
   &__user-name {
-    padding: 0 $side-margin;
     font-size: 16px;
     font-weight: bold;
+    padding: 0 $side-margin;
   }
 
   &__groups {
-    height: 85%;
     background-color: $dark-blue;
+    height: 85%;
   }
   &__group {
     padding: $side-margin;
