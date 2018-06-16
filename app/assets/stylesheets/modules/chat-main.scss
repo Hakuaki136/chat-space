@@ -1,9 +1,10 @@
 @import '../mixin/clearfix';
 
 .chat-main {
+  --side-width: 300px; // = $side-width
   float: left;
   height: 100vh;
-  width: calc(100vw - 300px);
+  width: calc(100vw - var(--side-width));
 
   &__header {
     border: 1px solid $header-border-color;
@@ -57,9 +58,9 @@
 
   &__message-name {
     color: $message-color;
+    float: left;
     font-size: 16px;
     font-weight: bold;
-    float: left;
   }
 
   &__message-time {
@@ -72,5 +73,41 @@
   &__message-body {
     clear: both;
     color: $message-color;
+  }
+
+  &__footer {
+    background-color: $footer-background;
+    height: $footer-height;
+    width: 100%;
+  }
+
+  &__footer-form {
+    margin: 0 $main-margin;
+  }
+
+  &__footer-body {
+    .message {
+      border: 0;
+      height: 50px;
+      margin: 20px 0;
+      padding: 15px 10px;
+      width: calc(100% - 130px);
+    }
+
+    .chat-file {
+      height: 50px;
+      margin: 32px 130px 20px 0;
+      width: 40px;
+    }
+
+    .submit {
+      background-color: $light-blue;
+      border: 0;
+      color: $side-font-color;
+      height: 50px;
+      margin: 20px 0;
+      text-align: center;
+      width: 100px;
+    }
   }
 }
