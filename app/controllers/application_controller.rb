@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  # change strong parameter for devise to allow register user_name
+  # allow access only for user logged in
   before_action :authenticate_user!
+  # change strong parameter for devise to allow register user_name
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   private
