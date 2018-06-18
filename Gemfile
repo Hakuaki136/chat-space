@@ -58,3 +58,6 @@ gem 'erb2haml'
 
 # font-awesome
 gem 'font-awesome-rails'
+
+# devise - user registration
+gem 'devise'
