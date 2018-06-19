@@ -3,7 +3,7 @@
     .chat-side__user-content
       .chat-side__user-name
         = current_user.name
-      = link_to "#", class: "chat-side__user--new-group" do
+      = link_to new_group_path, class: "chat-side__user--new-group" do
         %i.fa.fa-pencil-square-o
       = link_to edit_user_path(current_user), class: "chat-side__user--edit-user" do
         %i.fa.fa-cog
@@ -28,7 +28,7 @@
       - for i in 1..2
         = render "message", message: @message
   .chat-main__footer
-    %form.chat-main__footer-form#new_message{:action => "/groups/1050/messages", :method => "post"}
+    %form.chat-main__footer-form#new_message{action: "/groups/1050/messages", method: "post"}
       .chat-main__footer-body
         %input.message#message_body{placeholder: "type a message", type: "text", name: "message[body]"}
         %label.chat-file{for: "message_image"}
