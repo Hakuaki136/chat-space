@@ -1,8 +1,7 @@
 = link_to "#", class: "group-link" do
   .chat-side__group
     .chat-side__group-name
-      -# @group.name
-      test-group
+      = group.group[:name]
     .chat-side__group-message
       -# @group.message
-      test message
+      No message yet

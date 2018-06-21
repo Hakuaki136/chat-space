@@ -9,9 +9,8 @@
         %i.fa.fa-cog
   .chat-side__groups
     .chat-side__groups-list
-      - for i in 1..1
-        = render "group", group: @group
-
+      - @groups.each do |group|
+        = render partial: "group", locals: { group: group }
 .chat-main
   .chat-main__header
     .chat-main__header--group.clearfix
