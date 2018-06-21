@@ -63,3 +63,7 @@ gem 'font-awesome-rails'
 
 # devise - user registration
 gem 'devise'
+
+# image uploads
+gem 'carrierwave'
+gem 'mini_magick'
