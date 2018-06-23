@@ -1,0 +1,8 @@
+.chat-main__message.clearfix{data: {id: "message.id"}}
+  .chat-main__message-name
+    = message.user.name
+  .chat-main__message-time
+    = message.created_at
+  .chat-main__message-body
+    = message.message_body if message.message_body.present?
+    = image_tag message.image.url if message.image.present?

@@ -71,6 +71,9 @@
   &__message-body {
     clear: both;
     color: $message-color;
+    img {
+      height: 200px;
+    }
   }
 
   &__footer {
@@ -103,7 +106,7 @@
       top: 0;
       width: 40px;
 
-      .image {
+      #message_image {
         display: none;
         left: 15px;
         position: absolute;

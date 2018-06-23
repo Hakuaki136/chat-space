@@ -11,26 +11,25 @@
     .chat-side__groups-list
       - current_user.groups.each do |group|
         = render partial: "group", locals: { group: group }
-.chat-main
-  .chat-main__header
-    .chat-main__header--group.clearfix
-      .chat-main__header--group-name
-        test-group
-      = link_to "#", class: "chat-main__header--group-edit-btn" do
-        edit
-    .chat-main__header-members
-      MEMBER:
-      %i
-        Kent Toshima
-  .chat-main__body
-    .chat-main__body--messages-list
-      - for i in 1..2
-        = render "message", message: @message
-  .chat-main__footer
-    %form.chat-main__footer-form#new_message{action: "/groups/1050/messages", method: "post"}
-      .chat-main__footer-body
-        %input.message#message_body{placeholder: "type a message", type: "text", name: "message[body]"}
-        %label.chat-file{for: "message_image"}
-          %input.image#message_image{type: "file", name: "message[image]"}
-          %i.fa.fa-image
-        %input.submit{type: "submit", name: "commit", value: "Send", data: {disable: {with: "Send"}}}
+-# .chat-main
+-#   .chat-main__header
+-#     .chat-main__header--group.clearfix
+-#       .chat-main__header--group-name
+-#         test-group
+-#       = link_to "#", class: "chat-main__header--group-edit-btn" do
+-#         edit
+-#     .chat-main__header-members
+-#       MEMBER:
+-#       %i
+-#         Kent Toshima
+-#   .chat-main__body
+-#     .chat-main__body--messages-list
+-#       = render partial: 'message', collection: @messages
+-#   .chat-main__footer
+-#     = form_for [@group, @message], html: {id: 'new_message', class: 'chat-main__footer-form'} do |f|
+-#       .chat-main__footer-body
+-#         = f.text_field :message_body, class: 'message', id: 'message_body', placeholder: "type a message"
+-#         = f.label :image, class: 'chat-file', for: "message_image" do
+-#           = f.file_field :image, id: "message_image"
+-#           %i.fa.fa-image
+-#         = f.submit 'Send', class: "submit"
