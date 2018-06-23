@@ -15,13 +15,13 @@
   .chat-main__header
     .chat-main__header--group.clearfix
       .chat-main__header--group-name
-        test-group
-      = link_to "#", class: "chat-main__header--group-edit-btn" do
+        = @group.name
+      = link_to "/groups/#{params[:id]}/edit", class: "chat-main__header--group-edit-btn" do
         edit
     .chat-main__header-members
       MEMBER:
-      %i
-        Kent Toshima
+      - @group.users.each do |member|
+        %i= member.name
   .chat-main__body
     .chat-main__body--messages-list
       = render partial: 'message', collection: @messages
