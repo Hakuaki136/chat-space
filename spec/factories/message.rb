@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :message do
-    message_body "test message"
-    image File.open ("#{Rails.root}/public/uploads/message/image")
+    message_body Faker::Lorem.sentence
+    image File.open ("#{Rails.root}/public/uploads/message/image/2/1.png")
     user
     group
   end
