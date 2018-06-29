@@ -33,7 +33,7 @@ $(function() {
       appendMessage(message);
     })
     .fail(function() {
-      alert()
+      alert('メッセージの通信に失敗しました')
     })
   })
 })
