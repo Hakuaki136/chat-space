@@ -29,8 +29,11 @@ $(function() {
       processData: false,
       contentType: false
     })
-    .done(function(message) {
-      appendMessage(message);
+    // .done(function(message) {
+    //   appendMessage(message);
+    // })
+    // .fail(function() {
+    //   alert()
     })
   })
 })
