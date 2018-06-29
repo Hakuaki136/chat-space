@@ -30,7 +30,7 @@ $(function() {
       contentType: false
     })
     .done(function(message) {
-      appendMessage
+      appendMessage(message);
     })
   })
 })
