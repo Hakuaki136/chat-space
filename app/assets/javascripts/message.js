@@ -15,9 +15,6 @@ $(function() {
     html += image + `</div></div>`
     message_list.append(html);
   }
-  function scrtollToTop(element) {
-    $(element).animate({scrollTop: $(this).offset().top;});
-  }
 
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
@@ -34,7 +31,7 @@ $(function() {
     })
     .done(function(message) {
       appendMessage(message);
-      scrtollToTop(".chat-main__body--messages-list");
+      $(".chat-main__body--messages-list").animate({scrollTop: $(this).offset().top;});
     })
     .fail(function() {
       alert('メッセージの通信に失敗しました')
