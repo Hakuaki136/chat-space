@@ -17,7 +17,10 @@ $(function() {
       dataType: 'json'
     })
     .done(function(users) {
-      console.log(users);
+      search_list.empty;
+      users.forEach(function(user) {
+        appendUser(user);
+      });
     })
   })
 })
