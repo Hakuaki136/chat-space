@@ -16,6 +16,10 @@ $(function() {
     message_list.append(html);
   }
 
+  function scrollToTop(element) {
+    $(element).animate({scrollTop: $(this).offset().top;});
+  }
+
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var messageData = new FormData(this);
@@ -31,7 +35,7 @@ $(function() {
     })
     .done(function(message) {
       appendMessage(message);
-      $(".chat-main__body--messages-list").animate({scrollTop: $(this).offset().top;});
+      scrollToTop(".chat-main__body--messages-list")
     })
     .fail(function() {
       alert('メッセージの通信に失敗しました')
