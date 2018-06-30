@@ -10,17 +10,20 @@ $(function() {
                     ${ message.created_at }
                   </div>
                   <div class="chat-main__message-body">
-                    message.message_body
-                    <img src="${ message.image_url }" alt="">
-                  </div>
-                </div>`
+                    ${ message.message_body }`
+        image = message.image_url ? `<img src="${ message.image_url }" alt="">` : ``
+    html += image + `</div></div>`
     message_list.append(html);
+  }
+  function scrtollToTop(element) {
+    $(element).animate({scrollTop: $(this).offset().top;});
   }
 
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var messageData = new FormData(this);
     var url = $(this).attr('action')
+    console.log(url);
     $.ajax({
       url: url,
       type: 'POST',
@@ -31,7 +34,7 @@ $(function() {
     })
     .done(function(message) {
       appendMessage(message);
-      $("html,body").animate({scrollTop:$('.chat-main__footer').offset().top});
+      scrtollToTop(".chat-main__body--messages-list");
     })
     .fail(function() {
       alert('メッセージの通信に失敗しました')
