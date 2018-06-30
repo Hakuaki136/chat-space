@@ -40,8 +40,8 @@
   &__body {
     --header-height: 15%; // = $header-height
     --input-height: 90px;
-    background-color: $gray-background;
     height: calc(100vh - var(--header-height) - var(--input-height));
+    overflow-y: scroll;
 
     &--messages-list {
       padding-left: 40px;

@@ -31,6 +31,7 @@ $(function() {
     })
     .done(function(message) {
       appendMessage(message);
+      $("html,body").animate({scrollTop:$('.chat-main__footer').offset().top});
     })
     .fail(function() {
       alert('メッセージの通信に失敗しました')
