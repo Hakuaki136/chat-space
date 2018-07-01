@@ -24,11 +24,11 @@
         = f.label "チャットメンバー", class: "chat-group-form__label"
       .chat-group-form__field--right
         #chat-group-users
-          .chat-group-user.clearfix.js-chat-member{:id => "chat-group-user-#{current_user.id}"}
+          .chat-group-user.clearfix.js-chat-member{id: "chat-group-user-#{current_user.id}"}
             %p.chat-group-user__name #{current_user.name}
           - @group.users.each do |member|
             - if member.id != current_user.id
-              .chat-group-user.clearfix.js-chat-member{:id => "chat-group-user-#{member.id}"}
+              .chat-group-user.clearfix.js-chat-member{id: "chat-group-user-#{member.id}"}
                 = f.hidden_field :group, :user_ids[], value: member.id
                 %p.chat-group-user__name #{member.name}
                 %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
