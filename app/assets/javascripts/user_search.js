@@ -22,7 +22,8 @@ $(function() {
   }
   $('#user-search-field').on('keyup', function() {
     var input = $('#user-search-field').val();
-    if (input !== preWord && input) {
+    if (input !== preWord) {
+      search_list.empty();
       $.ajax({
         type: 'GET',
         url: '/users',
@@ -30,11 +31,12 @@ $(function() {
         dataType: 'json'
       })
       .done(function(users) {
-        search_list.empty();
-        users.forEach(function(user) {
-          appendUser(user);
-        });
-        preWord = input
+        if (input) {
+          users.forEach(function(user) {
+            appendUser(user);
+          });
+        }
+        preWord = input;
       })
       .fail(function() {
         alert('ユーザー検索に失敗しました');
