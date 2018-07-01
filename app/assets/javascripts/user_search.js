@@ -41,10 +41,10 @@ $(function() {
     })
   })
   $(document).on('click', '.chat-group-user__btn--add', function() {
-    $(this).parents('.chat-group-user').remove();
+    removeMember($(this));
     appendMember($(this));
   })
   $(document).on('click', '.chat-group-user__btn--remove', function() {
-    $(this).parents('.chat-group-user').remove();
+    removeMember($(this));
   })
 })
