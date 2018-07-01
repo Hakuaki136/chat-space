@@ -1,5 +1,6 @@
 $(function() {
   var search_list = $('#user-search-result')
+  var user_ids = []
   function appendUser(user) {
     let html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${ user.name }</p>
@@ -22,6 +23,14 @@ $(function() {
         users.forEach(function(user) {
           appendUser(user);
         });
-      })
+      }
+    })
+    .fail(function() {
+      alert('ユーザー検索に失敗しました');
     })
   })
+  $(document).on('click', '.chat-group-user__btn--add', function() {
+    user_ids.push($(this).data('userId'));
+    console.log(user_ids);
+  })
+})

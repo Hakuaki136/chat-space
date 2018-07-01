@@ -17,7 +17,7 @@ $(function() {
   }
 
   function scrollToTop(element) {
-    $(element).animate({scrollTop: $(this).offset().top;});
+    $(element).animate({scrollTop: $(this).offset().top});
   }
 
   $('#new_message').on('submit', function(e) {
