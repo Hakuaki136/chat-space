@@ -1,5 +1,4 @@
 $(function() {
-  var user_ids = [];
   var search_list = $('#user-search-result');
   var member_list = $('#chat-group-users');
   var preWord;
@@ -42,7 +41,8 @@ $(function() {
       })
     }
   });
-  $('#chat-group-users').on('click', '.js-add-btn', function() {
+  $('#user-search-result').on('click', '.js-add-btn', function() {
+    console.log(this);
     removeMember($(this));
     appendMember($(this));
   });
