@@ -1,6 +1,7 @@
 $(function() {
-  var search_list = $('#user-search-result')
-  var member_list = $('#chat-group-users')
+  var search_list = $('#user-search-result');
+  var member_list = $('#chat-group-users');
+  var preWord;
   function appendUser(user) {
     let html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${ user.name }</p>
@@ -21,7 +22,6 @@ $(function() {
   }
   $('#user-search-field').on('keyup', function() {
     var input = $('#user-search-field').val();
-
     $.ajax({
       type: 'GET',
       url: '/users',
@@ -39,12 +39,12 @@ $(function() {
     .fail(function() {
       alert('ユーザー検索に失敗しました');
     })
-  })
+  });
   $(document).on('click', '.chat-group-user__btn--add', function() {
     removeMember($(this));
     appendMember($(this));
-  })
+  });
   $(document).on('click', '.chat-group-user__btn--remove', function() {
     removeMember($(this));
-  })
+  });
 })

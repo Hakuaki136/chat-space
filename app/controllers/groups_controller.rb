@@ -17,12 +17,11 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.find(params[:id])
+    @group = Group.find(params[:id]).includes(:user)
   end
 
   def update
     @group = Group.find(params[:id])
-    binding.pry
     if @group.update(group_params)
       redirect_to root_path, notice: "グループを更新しました"
     else
