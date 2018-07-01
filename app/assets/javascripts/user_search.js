@@ -5,7 +5,7 @@ $(function() {
   function appendUser(user) {
     let html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${ user.name }</p>
-                  <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${ user.id }" data-user-name="${ user.name }">追加</a>
+                  <a class="user-search-add chat-group-user__btn chat-group-user__btn--add js-add-btn" data-user-id="${ user.id }" data-user-name="${ user.name }">追加</a>
                 </div>`;
     search_list.append(html);
   }
@@ -34,17 +34,18 @@ $(function() {
         users.forEach(function(user) {
           appendUser(user);
         });
+        preWord = input
       })
       .fail(function() {
         alert('ユーザー検索に失敗しました');
       })
     }
   });
-  $(document).on('click', '.chat-group-user__btn--add', function() {
+  $(document).on('click', '.js-add-btn', function() {
     removeMember($(this));
     appendMember($(this));
   });
-  $(document).on('click', '.chat-group-user__btn--remove', function() {
+  $(document).on('click', '.js-remove-btn', function() {
     removeMember($(this));
   });
 })
