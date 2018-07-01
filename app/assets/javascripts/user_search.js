@@ -1,7 +1,6 @@
 $(function() {
   var search_list = $('#user-search-result')
   var member_list = $('#chat-group-users')
-  var user_ids = []
   function appendUser(user) {
     let html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${ user.name }</p>
@@ -39,8 +38,6 @@ $(function() {
     })
   })
   $(document).on('click', '.chat-group-user__btn--add', function() {
-    console.log($(this));
-    user_ids.push($(this).data('userId'));
     $(this).parents('.chat-group-user').remove();
     appendMember($(this));
   })
