@@ -17,10 +17,11 @@ $(function() {
       dataType: 'json'
     })
     .done(function(users) {
-      search_list.empty;
-      users.forEach(function(user) {
-        appendUser(user);
-      });
+      search_list.empty();
+      if (input !== "") {
+        users.forEach(function(user) {
+          appendUser(user);
+        });
     })
   })
 })
