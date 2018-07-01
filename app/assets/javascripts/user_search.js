@@ -44,7 +44,6 @@ $(function() {
     }
   });
   $('#user-search-result').on('click', '.js-add-btn', function() {
-    console.log(this);
     removeMember($(this));
     appendMember($(this));
   });
