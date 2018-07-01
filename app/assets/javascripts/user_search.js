@@ -18,7 +18,7 @@ $(function() {
     member_list.append(html);
   }
   function removeMember(button) {
-    $(button).parents('.chat-group-user').remove();
+    $(button).parents('.js-chat-member').remove();
   }
   $('#user-search-field').on('keyup', function() {
     var input = $('#user-search-field').val();
