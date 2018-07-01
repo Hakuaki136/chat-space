@@ -22,23 +22,23 @@ $(function() {
   }
   $('#user-search-field').on('keyup', function() {
     var input = $('#user-search-field').val();
-    $.ajax({
-      type: 'GET',
-      url: '/users',
-      data: { keyword: input },
-      dataType: 'json'
-    })
-    .done(function(users) {
-      search_list.empty();
-      if (input !== "") {
+    if (input !== preWord && input) {
+      $.ajax({
+        type: 'GET',
+        url: '/users',
+        data: { keyword: input },
+        dataType: 'json'
+      })
+      .done(function(users) {
+        search_list.empty();
         users.forEach(function(user) {
           appendUser(user);
         });
-      }
-    })
-    .fail(function() {
-      alert('ユーザー検索に失敗しました');
-    })
+      })
+      .fail(function() {
+        alert('ユーザー検索に失敗しました');
+      })
+    }
   });
   $(document).on('click', '.chat-group-user__btn--add', function() {
     removeMember($(this));
