@@ -41,11 +41,11 @@ $(function() {
       })
     }
   });
-  $(document).on('click', '.js-add-btn', function() {
+  $('#chat-group-users').on('click', '.js-add-btn', function() {
     removeMember($(this));
     appendMember($(this));
   });
-  $(document).on('click', '.js-remove-btn', function() {
+  $('#chat-group-users').on('click', '.js-remove-btn', function() {
     removeMember($(this));
   });
 })
