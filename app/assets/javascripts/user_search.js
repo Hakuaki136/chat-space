@@ -1,4 +1,5 @@
 $(function() {
+  var user_ids = [];
   var search_list = $('#user-search-result');
   var member_list = $('#chat-group-users');
   var preWord;
