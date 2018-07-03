@@ -11,7 +11,7 @@ $(function() {
                   </div>
                   <div class="chat-main__message-body">
                     ${ message.message_body }`
-        image = message.image_url ? `<img src="${ message.image_url }" alt="">` : ``
+    let image = message.image_url ? `<img src="${ message.image_url }" alt="">` : ``
     html += image + `</div></div>`
     message_list.append(html);
   }
