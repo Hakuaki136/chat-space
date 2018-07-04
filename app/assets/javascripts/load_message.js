@@ -1,6 +1,7 @@
 $(function() {
-  var = message_list = $('.chat-main__body--messages-list');
-  function appendMessage(message) {
+  const INTERVAL = 5000
+  var message_list = $('.chat-main__body--messages-list');
+  function buildHTML(message) {
     let html = `
       <div class="chat-main__message clearfix" data-id="${ message.id }">
         <div class="chat-main__message-name">
@@ -12,23 +13,32 @@ $(function() {
         <div class="chat-main__message-body">
           ${ message.message_body }`;
     let image = message.image ? `<img src="${ message.image }" alt="">` : ``;
-    html += html + image + `</div></div>`;
-    message_list.append(html);
+    return html + image + `</div></div>`;
   };
-  setInterval(function() {
-    $.ajax({
-      url: location.href.json,
-      processData: false,
-      contentType: false
-    })
-    .done(function(messages) {
-      messages.forEach(function(message) {
-        appendMessage(message);
-      });
-      console.log($('.chat-main__message').data());
-    })
-    .fail(function() {
-      alert('自動更新に失敗しました');
-    })
-  }, 5000);
+
+  var reloading =
+        setInterval(function() {
+          if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+            $.ajax({
+              type: 'GET',
+              url: window.location.href,
+              dataType: 'json'
+            })
+            .done(function(messages) {
+              let html;
+              let newestId = $('.chat-main__message').data('id');
+              messages.forEach(function(message) {
+                if (newestId < message.id) {
+                  html += buildHTML(message);
+                }
+              });
+              message_list.prepend(html);
+            })
+            .fail(function() {
+              alert('自動更新に失敗しました');
+            });
+          } else {
+            clearInterval(reloading);
+          }
+        }, INTERVAL);
 });
