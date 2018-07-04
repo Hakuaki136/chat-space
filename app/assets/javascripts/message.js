@@ -34,10 +34,10 @@ $(function() {
     })
     .done(function(message) {
       appendMessage(message);
-      scrollToTop(".chat-main__body--messages-list")
+      scrollToTop(".chat-main__body--messages-list");
     })
     .fail(function() {
-      alert('メッセージの通信に失敗しました')
+      alert('メッセージの通信に失敗しました');
     })
   })
 })
