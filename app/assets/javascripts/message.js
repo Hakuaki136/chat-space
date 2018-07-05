@@ -13,7 +13,7 @@ $(function() {
                     ${ message.message_body }`
     let image = message.image_url ? `<img src="${ message.image_url }" alt="">` : ``
     html += image + `</div></div>`
-    message_list.append(html);
+    message_list.prepend(html);
   }
 
   function scrollToTop(element) {

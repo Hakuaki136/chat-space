@@ -30,7 +30,6 @@
           - @group.users.each do |member|
             - if member.id != current_user.id
               .chat-group-user.clearfix.js-chat-member{id: "chat-group-user-#{member.id}"}
-                -# - binding.pry
                 = hidden_field_tag ':group[:user_ids][]', member.id
                 %p.chat-group-user__name #{member.name}
                 %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
