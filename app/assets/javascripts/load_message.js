@@ -11,7 +11,7 @@ $(function() {
           ${ message.date }
         </div>
         <div class="chat-main__message-body">
-          ${ message.message_body }`;
+          ${ message.body }`;
     let image = message.image ? `<img src="${ message.image }" alt="">` : ``;
     return html + image + `</div></div>`;
   };
@@ -25,7 +25,7 @@ $(function() {
               dataType: 'json'
             })
             .done(function(messages) {
-              let html;
+              let html = ``;
               let newestId = $('.chat-main__message').data('id');
               messages.forEach(function(message) {
                 if (newestId < message.id) {
