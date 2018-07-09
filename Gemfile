@@ -71,3 +71,7 @@ gem 'devise'
 # image uploads
 gem 'carrierwave'
 gem 'mini_magick'
+
+group :production do
+  gem 'unicorn'
+end
