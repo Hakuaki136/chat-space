@@ -81,8 +81,8 @@ gem 'devise'
 gem 'carrierwave'
 gem 'fog-aws'
 
-# jQuery
-gem 'jquery-turbolinks'
+# jQuery turbolinks
+# gem 'jquery-turbolinks'
 
 group :production do
   gem 'unicorn'
