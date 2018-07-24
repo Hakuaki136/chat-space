@@ -82,7 +82,7 @@ gem 'carrierwave'
 gem 'fog-aws'
 
 # jQuery turbolinks
-# gem 'jquery-turbolinks'
+gem 'jquery-turbolinks'
 
 group :production do
   gem 'unicorn'
