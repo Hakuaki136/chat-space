@@ -18,29 +18,31 @@ $(document).on('turbolinks:load', function() {
     };
 
     var reloading =
-          setInterval(function() {
-            if (window.location.href.match(/\/groups\/\d+\/messages/)) {
-              $.ajax({
-                type: 'GET',
-                url: window.location.href,
-                dataType: 'json'
-              })
-              .done(function(messages) {
-                let html = ``;
-                let newestId = $('.chat-main__message').data('id');
-                messages.forEach(function(message) {
-                  if (newestId < message.id) {
-                    html += buildHTML(message);
-                  }
-                });
-                message_list.prepend(html);
-              })
-              .fail(function() {
-                alert('自動更新に失敗しました');
-              });
-            } else {
-              clearInterval(reloading);
-            }
-          }, INTERVAL);
-  });  
-}
+      setInterval(function() {
+        if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+          $.ajax({
+            type: 'GET',
+            url: window.location.href,
+            dataType: 'json'
+          })
+          .done(function(messages) {
+            let html = ``;
+            let newestId = $('.chat-main__message').data('id');
+            console.log(newestId);
+            messages.forEach(function(message) {
+              if (newestId < message.id) {
+                html += buildHTML(message);
+              }
+            });
+            message_list.prepend(html);
+          })
+          .fail(function() {
+            alert('自動更新に失敗しました');
+          });
+        } else {
+          clearInterval(reloading);
+        }
+      }, INTERVAL);
+  });
+
+})
